@@ -4,15 +4,15 @@
 		de que a razao e o anterior - o atual, somente.
 */
 
-#include <iostream>
 #include <algorithm>
-#include <queue>
-#include <vector>
-#include <list>
-#include <set>
-#include <cstring>
 #include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <list>
 #include <map>
+#include <queue>
+#include <set>
+#include <vector>
 #define MAX 500
 #define color 2
 #define mp make_pair
@@ -31,27 +31,24 @@ int64 a, b, n;
 
 int main()
 {
-	scanf("%d", &n);
-	int sub = INF, ant = INF, diff, cont = 0;
-	for (int i = 0; i < n; ++i)
-	{
-		scanf("%d", &a);
-		if (ant == INF)
-			ant = a;
-		else
-		{
-			diff = ant - a;
-			ant = a;
-			if (sub == INF)
-				sub = diff;
-			else if (sub != diff)
-			{
-				cont++;
-				sub = INF;
-			}
-		}
-	}
-	printf("%d", cont + 1);
+    scanf("%d", &n);
+    int sub = INF, ant = INF, diff, cont = 0;
+    for (int i = 0; i < n; ++i) {
+        scanf("%d", &a);
+        if (ant == INF)
+            ant = a;
+        else {
+            diff = ant - a;
+            ant = a;
+            if (sub == INF)
+                sub = diff;
+            else if (sub != diff) {
+                cont++;
+                sub = INF;
+            }
+        }
+    }
+    printf("%d", cont + 1);
 
-	return 0;
+    return 0;
 }

@@ -4,10 +4,10 @@
 		o aluno que corresponde ao numero sorteado
 */
 
-#include <iostream>
 #include <algorithm>
-#include <vector>
+#include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -19,8 +19,7 @@ int main()
     cin >> n >> m;
     string nome;
     vector<string> chamada;
-    for (int k = 0; k < n; ++k)
-    {
+    for (int k = 0; k < n; ++k) {
         cin >> nome;
         chamada.push_back(nome);
     }

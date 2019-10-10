@@ -9,12 +9,10 @@ int resp[2][10], pow10[10];
 void count(int x, bool up)
 {
     int *cnt = resp[up], d, pos = 0, r = 0, remainder = 0, pw;
-    while (x)
-    {
+    while (x) {
         d = x % 10; //pego o ultimo digito
-        x /= 10;    //pego o numero sem o ultimo digito
-        if (pos)
-        {
+        x /= 10; //pego o numero sem o ultimo digito
+        if (pos) {
             pw = d * pow10[pos - 1] * pos;
             for (int i = 0; i < 10; ++i)
                 cnt[i] += pw;
@@ -39,14 +37,12 @@ int main()
         pow10[i] = 10 * pow10[i - 1];
 
     int a, b;
-    while (scanf("%d %d", &a, &b) && (a || b))
-    {
+    while (scanf("%d %d", &a, &b) && (a || b)) {
         for (int i = 0; i < 10; ++i)
             resp[0][i] = resp[1][i] = 0;
-        count(b, 1);     //conto os digitos de b
+        count(b, 1); //conto os digitos de b
         count(a - 1, 0); //conto os digitos de a-1
-        for (int i = 0; i < 10; ++i)
-        {
+        for (int i = 0; i < 10; ++i) {
             if (i)
                 printf(" ");
             printf("%d", resp[1][i] - resp[0][i]); //imprimo a diferenca entre os intervalos

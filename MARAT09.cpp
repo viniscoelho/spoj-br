@@ -17,8 +17,7 @@ int main()
     cin >> n >> m;
     bool flag = true;
     int x, soma = 0;
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         cin >> x;
         if (x - soma <= m)
             soma = x;

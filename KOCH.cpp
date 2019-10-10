@@ -36,14 +36,12 @@ int main()
     scanf("%lld", &t);
     getchar();
     fibonacci();
-    while (t--)
-    {
+    while (t--) {
         scanf(" %[^\n]", str);
         s = strlen(str), ans = 0;
         if (s == 1)
             ans = str[0] - 48;
-        for (int j = 0; j < s - 1; ++j)
-        {
+        for (int j = 0; j < s - 1; ++j) {
             if (!j)
                 ans = (str[j] - 48) * 10 + (str[j + 1] - 48);
             else

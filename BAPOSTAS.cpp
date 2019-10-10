@@ -17,23 +17,18 @@ int main()
 {
     ios::sync_with_stdio(false);
     int n, x, y;
-    for (cin >> n; n != 0; cin >> n)
-    {
+    for (cin >> n; n != 0; cin >> n) {
         for (int i = 0; i < n; ++i)
             cin >> aposta[i];
         int b = -1, e = -1, j;
         int MAX = 0;
         priority_queue<int> pq;
-        for (int i = 0; i < n; ++i)
-        {
-            if (aposta[i] >= 0)
-            {
+        for (int i = 0; i < n; ++i) {
+            if (aposta[i] >= 0) {
                 int soma = 0;
-                for (j = i; soma >= 0 && j < n; ++j)
-                {
+                for (j = i; soma >= 0 && j < n; ++j) {
                     soma += aposta[j];
-                    if (soma >= MAX)
-                    {
+                    if (soma >= MAX) {
                         MAX = soma;
                         pq.push(MAX);
                     }

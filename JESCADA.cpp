@@ -13,8 +13,7 @@ int main()
     ios::sync_with_stdio(false);
     int p, t, sum = 0, aux = 0;
     cin >> p;
-    for (int i = 0; i < p; ++i)
-    {
+    for (int i = 0; i < p; ++i) {
         cin >> t;
         if (t >= aux)
             sum += 10;

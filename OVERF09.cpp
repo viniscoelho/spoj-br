@@ -10,15 +10,12 @@ int main()
     cin >> l >> n;
     cin.ignore();
     cin >> c >> m;
-    if (c == '*')
-    {
+    if (c == '*') {
         if (n * m <= l)
             cout << "OK";
         else
             cout << "OVERFLOW";
-    }
-    else
-    {
+    } else {
         if (n + m <= l)
             cout << "OK";
         else

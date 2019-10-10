@@ -7,19 +7,15 @@ int main()
 {
     ios::sync_with_stdio(false);
     long long n, a;
-    for (cin >> n; n != 0; cin >> n)
-    {
+    for (cin >> n; n != 0; cin >> n) {
         string bin;
         long long a = n;
         int p = 0, par = 0;
-        while (a != 0)
-        {
-            if (n & (1 << p))
-            {
+        while (a != 0) {
+            if (n & (1 << p)) {
                 bin += '1';
                 par++;
-            }
-            else
+            } else
                 bin += '0';
             p++;
             a /= 2;

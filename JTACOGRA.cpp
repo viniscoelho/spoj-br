@@ -13,8 +13,7 @@ int main()
     ios::sync_with_stdio(false);
     int n, t, v, soma = 0;
     cin >> n;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         cin >> t >> v;
         soma += t * v;
     }

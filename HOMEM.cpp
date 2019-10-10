@@ -2,10 +2,14 @@
 #include <cstdlib>
 #define MAXN 530000
 
-struct segment
-{
+struct segment {
     int h, e, r;
-    segment(int h = 0, int e = 0, int r = 0) : h(h), e(e), r(r) {}
+    segment(int h = 0, int e = 0, int r = 0)
+        : h(h)
+        , e(e)
+        , r(r)
+    {
+    }
 
     segment operator+(segment a)
     {
@@ -21,8 +25,7 @@ void build(int node, int ld, int rd)
     flag[node] = 0;
     if (ld == rd)
         tree[node] = segment(1, 0, 0);
-    else
-    {
+    else {
         int tm = (ld + rd) >> 1;
         build(node * 2, ld, tm);
         build(node * 2 + 1, tm + 1, rd);
@@ -30,7 +33,7 @@ void build(int node, int ld, int rd)
     }
 }
 
-void swap(int *h, int *e, int *r)
+void swap(int* h, int* e, int* r)
 {
     *h = *h ^ *e;
     *e = *h ^ *e;
@@ -46,8 +49,7 @@ int readInt()
     bool minus = false;
     int result = 0;
     char ch = getchar_unlocked();
-    while (true)
-    {
+    while (true) {
         if (ch == '-')
             break;
         if (ch >= '0' && ch <= '9')
@@ -58,8 +60,7 @@ int readInt()
         minus = true;
     else
         result = ch - '0';
-    while (true)
-    {
+    while (true) {
         ch = getchar_unlocked();
         if (ch < '0' || ch > '9')
             break;
@@ -96,8 +97,7 @@ segment query(int node, int ld, int rd, int l, int r)
         return zero;
     if (ld >= l && rd <= r)
         return get(node);
-    else
-    {
+    else {
         int tm = (ld + rd) >> 1;
         get(node);
         return query(2 * node, ld, tm, l, r) + query(2 * node + 1, tm + 1, rd, l, r);
@@ -108,13 +108,10 @@ void update(int node, int ld, int rd, int l, int r)
 {
     if (l > rd || r < ld)
         return;
-    if (ld >= l && rd <= r)
-    {
+    if (ld >= l && rd <= r) {
         flag[node]++;
         return;
-    }
-    else
-    {
+    } else {
         int tm = (ld + rd) >> 1;
         update(2 * node, ld, tm, l, r);
         update(2 * node + 1, tm + 1, rd, l, r);
@@ -126,20 +123,16 @@ int main()
 {
     int n, m, a, b;
     char c;
-    while (scanf("%d %d", &n, &m) != EOF)
-    {
+    while (scanf("%d %d", &n, &m) != EOF) {
         build(1, 0, n - 1);
-        while (m--)
-        {
+        while (m--) {
             scanf(" %c", &c);
             a = readInt();
             b = readInt();
-            if (c == 'C')
-            {
+            if (c == 'C') {
                 segment resp = query(1, 0, n - 1, a - 1, b - 1);
                 printf("%d %d %d\n", resp.h, resp.e, resp.r);
-            }
-            else
+            } else
                 update(1, 0, n - 1, a - 1, b - 1);
         }
         printf("\n");

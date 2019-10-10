@@ -6,9 +6,9 @@
 		esses numeros
 */
 
-#include <iostream>
 #include <algorithm>
 #include <cstdio>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -18,18 +18,15 @@ typedef long long ll;
 int main()
 {
     int n;
-    for (scanf("%d", &n); n != 0; scanf("%d", &n))
-    {
+    for (scanf("%d", &n); n != 0; scanf("%d", &n)) {
         vector<ll> tenta;
         ll x;
-        for (int i = 0; i < n; ++i)
-        {
+        for (int i = 0; i < n; ++i) {
             scanf("%lld", &x);
             tenta.push_back(x);
         }
         sort(tenta.begin(), tenta.end());
-        do
-        {
+        do {
             for (int i = 0; i < n; ++i)
                 printf("%lld ", tenta[i]);
             printf("\n");

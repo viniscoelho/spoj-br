@@ -17,17 +17,14 @@ int main()
     map<int, int>::iterator it;
     pair<map<int, int>::iterator, bool> ret;
     cin >> n;
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         cin >> num;
         ret = can.insert(make_pair(num, 1));
         if (!ret.second)
             can[num]++;
     }
-    for (it = can.begin(); it != can.end(); ++it)
-    {
-        if (it->second > cont)
-        {
+    for (it = can.begin(); it != can.end(); ++it) {
+        if (it->second > cont) {
             maior = it->first;
             cont = it->second;
         }

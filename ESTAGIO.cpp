@@ -11,8 +11,7 @@
 
 using namespace std;
 
-struct aluno
-{
+struct aluno {
     int codigo, media;
 };
 
@@ -22,8 +21,7 @@ int main()
 {
     ios::sync_with_stdio(false);
     int n, turma = 1;
-    for (cin >> n; n != 0; cin >> n)
-    {
+    for (cin >> n; n != 0; cin >> n) {
         int aux = 0;
         vector<int> melhor;
         for (int i = 0; i < n; i++)

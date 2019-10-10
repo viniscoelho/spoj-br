@@ -10,16 +10,16 @@
 		caso contrario "N"
 */
 
-#include <iostream>
 #include <algorithm>
-#include <queue>
-#include <vector>
-#include <list>
-#include <set>
-#include <cstring>
-#include <cstdio>
-#include <map>
 #include <cmath>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
+#include <vector>
 #define MAX 110
 #define color 2
 #define mp make_pair
@@ -41,45 +41,40 @@ int dp[MAX][5000]; /*Number of items x maxWeight */
 
 int fill_sack(int items, int maxWeight)
 {
-	for (int i = 0; i <= max(maxWeight, items); i++)
-	{
-		if (i <= maxWeight)
-			dp[0][i] = 0;
-		if (i <= items)
-			dp[i][0] = 0;
-	}
-	for (int i = 1; i <= items; ++i)
-		for (int j = 0; j <= maxWeight; ++j)
-		{
-			dp[i][j] = dp[i - 1][j]; /* If I do not take this item */
-			if (j - weight[i] >= 0)
-			{
-				/* suppose if I take this item */
-				dp[i][j] = max(dp[i][j], dp[i - 1][j - weight[i]] + value[i]);
-			}
-		}
-	return dp[items][maxWeight];
+    for (int i = 0; i <= max(maxWeight, items); i++) {
+        if (i <= maxWeight)
+            dp[0][i] = 0;
+        if (i <= items)
+            dp[i][0] = 0;
+    }
+    for (int i = 1; i <= items; ++i)
+        for (int j = 0; j <= maxWeight; ++j) {
+            dp[i][j] = dp[i - 1][j]; /* If I do not take this item */
+            if (j - weight[i] >= 0) {
+                /* suppose if I take this item */
+                dp[i][j] = max(dp[i][j], dp[i - 1][j - weight[i]] + value[i]);
+            }
+        }
+    return dp[items][maxWeight];
 }
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	int t = 1;
-	while (cin >> x >> y >> n && x + y + n)
-	{
-		cout << "Teste " << t++ << "\n";
-		int sum = 0;
-		for (int i = 1; i <= n; ++i)
-		{
-			cin >> value[i];
-			sum += value[i];
-			weight[i] = value[i];
-		}
-		if ((sum + x + y) % 2 == 1 || (sum + x + y) / 2 - min(x, y) != fill_sack(n, (sum + x + y) / 2 - min(x, y)))
-			cout << "N\n\n";
-		else
-			cout << "S\n\n";
-	}
+    ios::sync_with_stdio(false);
+    int t = 1;
+    while (cin >> x >> y >> n && x + y + n) {
+        cout << "Teste " << t++ << "\n";
+        int sum = 0;
+        for (int i = 1; i <= n; ++i) {
+            cin >> value[i];
+            sum += value[i];
+            weight[i] = value[i];
+        }
+        if ((sum + x + y) % 2 == 1 || (sum + x + y) / 2 - min(x, y) != fill_sack(n, (sum + x + y) / 2 - min(x, y)))
+            cout << "N\n\n";
+        else
+            cout << "S\n\n";
+    }
 
-	return 0;
+    return 0;
 }

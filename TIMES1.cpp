@@ -1,7 +1,7 @@
-#include <iostream>
-#include <vector>
 #include <algorithm>
+#include <iostream>
 #include <map>
+#include <vector>
 
 using namespace std;
 
@@ -15,15 +15,13 @@ int main()
     vector<vector<string>> times(t);
     string jog;
     cin.ignore();
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         cin >> jog >> p;
         jogadores.insert(make_pair(p, jog));
     }
     int pos = 0;
     mp = jogadores.rbegin();
-    while (mp != jogadores.rend())
-    {
+    while (mp != jogadores.rend()) {
         if (pos == t)
             pos = 0;
         string ijog = (*mp).second;
@@ -33,8 +31,7 @@ int main()
     }
     for (int j = 0; j < t; j++)
         sort(times[j].begin(), times[j].end());
-    for (int j = 1; j <= t; ++j)
-    {
+    for (int j = 1; j <= t; ++j) {
         cout << "Time " << j << "\n";
         for (int i = 0; i < times[j - 1].size(); ++i)
             cout << times[j - 1][i] << "\n";

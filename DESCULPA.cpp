@@ -4,8 +4,8 @@
 		Imprime o numero maximo de 'desculpa' que podem caber no texto
 */
 
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #define MAX 60
 
 using namespace std;
@@ -20,11 +20,9 @@ int fill_sack(int items, int maxWeight)
     for (int i = 0; i <= items; i++)
         dp[i][0] = 0;
     for (int i = 1; i <= items; i++)
-        for (int j = 0; j <= maxWeight; j++)
-        {
+        for (int j = 0; j <= maxWeight; j++) {
             dp[i][j] = dp[i - 1][j]; /* If I do not take this item */
-            if (j - weight[i] >= 0)
-            {
+            if (j - weight[i] >= 0) {
                 /* suppose if I take this item */
                 dp[i][j] = max(dp[i][j], dp[i - 1][j - weight[i]] + value[i]);
             }
@@ -36,8 +34,7 @@ int main()
 {
     ios::sync_with_stdio(false);
     int c, f, count = 1;
-    for (cin >> c >> f; c + f != 0; cin >> c >> f)
-    {
+    for (cin >> c >> f; c + f != 0; cin >> c >> f) {
         for (int i = 1; i <= f; i++)
             cin >> weight[i] >> value[i];
         cout << "Teste " << count++ << "\n"

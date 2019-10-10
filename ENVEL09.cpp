@@ -5,8 +5,8 @@
 		de envelopes que ele pode enviar
 */
 
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
@@ -17,8 +17,7 @@ int main()
     ios::sync_with_stdio(false);
     int n, m, x;
     cin >> n >> m;
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         cin >> x;
         envelope[x - 1]++;
     }

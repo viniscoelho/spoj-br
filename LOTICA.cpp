@@ -5,11 +5,11 @@
 		ou nenhuma estejam preenchidas, imprimir "*"
 */
 
-#include <cstdio>
-#include <iostream>
-#include <cstring>
-#include <vector>
 #include <algorithm>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -17,16 +17,12 @@ int main()
 {
     ios::sync_with_stdio(false);
     int n;
-    for (cin >> n; n != 0; cin >> n)
-    {
-        for (int i = 0; i < n; ++i)
-        {
+    for (cin >> n; n != 0; cin >> n) {
+        for (int i = 0; i < n; ++i) {
             int cont = 0, pos = 0, q;
-            for (int j = 0; j < 5; ++j)
-            {
+            for (int j = 0; j < 5; ++j) {
                 cin >> q;
-                if (q <= 127)
-                {
+                if (q <= 127) {
                     cont++;
                     pos = j;
                 }

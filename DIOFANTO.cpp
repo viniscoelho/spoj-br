@@ -1,5 +1,5 @@
-#include <iostream>
 #include <cstdio>
+#include <iostream>
 #include <vector>
 #define MOD 1300031LL
 
@@ -13,10 +13,8 @@ vector<int64> fat(MOD + 1, 1);
 int64 fastPow(int64 a, int64 b)
 {
     int64 res = 1LL;
-    while (b > 0LL)
-    {
-        if (b & 1LL)
-        {
+    while (b > 0LL) {
+        if (b & 1LL) {
             res *= a;
             res %= MOD;
         }
@@ -30,8 +28,7 @@ int64 fastPow(int64 a, int64 b)
 int countFact(int n, int p)
 {
     int k = 0;
-    while (n >= p)
-    {
+    while (n >= p) {
         k += n / p;
         n /= p;
     }
@@ -62,8 +59,7 @@ int main()
     int n, r;
     for (int i = 2; i < MOD; i++)
         fat[i] = (fat[i - 1] * i) % MOD;
-    while (t--)
-    {
+    while (t--) {
         scanf("%d %d", &n, &r);
         printf("%lld\n", C(n + r - 1, n - 1));
     }

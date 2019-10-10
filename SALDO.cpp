@@ -15,8 +15,7 @@ int main()
 {
     ios::sync_with_stdio(false);
     int n, t = 1, x, y;
-    for (cin >> n; n != 0; cin >> n)
-    {
+    for (cin >> n; n != 0; cin >> n) {
         cout << "Teste " << t++ << "\n";
         int pro[n], contra[n];
         for (int i = 0; i < n; ++i)
@@ -24,16 +23,12 @@ int main()
         int b = -1, e = -1, j;
         int MAX = 0;
         priority_queue<pair<ii, ii>> pq;
-        for (int i = 0; i < n; ++i)
-        {
-            if (pro[i] - contra[i] >= 0)
-            {
+        for (int i = 0; i < n; ++i) {
+            if (pro[i] - contra[i] >= 0) {
                 int soma = 0;
-                for (j = i; soma >= 0 && j < n; ++j)
-                {
+                for (j = i; soma >= 0 && j < n; ++j) {
                     soma += pro[j] - contra[j];
-                    if (soma >= MAX)
-                    {
+                    if (soma >= MAX) {
                         MAX = soma;
                         pq.push(make_pair(make_pair(MAX, j - i), make_pair(i + 1, j + 1)));
                     }

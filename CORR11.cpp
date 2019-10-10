@@ -5,8 +5,8 @@
 		do menor tempo para o maior
 */
 
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <queue>
 
 using namespace std;
@@ -19,19 +19,16 @@ int main()
     int m, n, x;
     cin >> n >> m;
     priority_queue<ii> corrida;
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         int soma = 0;
-        for (int j = 0; j < m; ++j)
-        {
+        for (int j = 0; j < m; ++j) {
             cin >> x;
             soma += x;
         }
         corrida.push(ii(-soma, i + 1));
     }
     int cont = 0;
-    while (cont < 3)
-    {
+    while (cont < 3) {
         cout << corrida.top().second << "\n";
         corrida.pop();
         cont++;

@@ -14,8 +14,7 @@ int main()
     int n, c, s, e, total = 0;
     bool flag = false;
     cin >> n >> c;
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         cin >> s >> e;
         total += e - s;
         if (total > c)

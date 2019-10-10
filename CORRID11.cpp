@@ -16,16 +16,13 @@ int main()
     int n, m, x, y;
     cin >> n >> m;
     int menor = 0x3f3f3f3f, num = -1;
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         int soma = 0;
-        for (int j = 0; j < m; ++j)
-        {
+        for (int j = 0; j < m; ++j) {
             cin >> x;
             soma += x;
         }
-        if (soma < menor)
-        {
+        if (soma < menor) {
             menor = soma;
             num = i + 1;
         }

@@ -11,20 +11,25 @@ using namespace std;
 
 typedef long long int64;
 
-struct Node
-{
+struct Node {
     int rounds;
     int x, y, h;
 
-    Node(int rounds, int x, int y, int h) : rounds(rounds), x(x), y(y), h(h) {}
+    Node(int rounds, int x, int y, int h)
+        : rounds(rounds)
+        , x(x)
+        , y(y)
+        , h(h)
+    {
+    }
 };
 
 //possiveis vizinhos
 const int dir[][2] = {
-    {1, 0},
-    {0, 1},
-    {-1, 0},
-    {0, -1},
+    { 1, 0 },
+    { 0, 1 },
+    { -1, 0 },
+    { 0, -1 },
 };
 
 int adj[60][60], visited[60][60];
@@ -35,8 +40,7 @@ int main()
     int m, n, count = 0;
     cin >> m >> n;
     for (int i = 0; i < m; ++i)
-        for (int j = 0; j < n; ++j)
-        {
+        for (int j = 0; j < n; ++j) {
             cin >> adj[i][j];
             visited[i][j] = 0;
         }
@@ -46,28 +50,24 @@ int main()
     visited[0][0] = 1;
 
     int resp = 0;
-    while (!bfs.empty())
-    {
+    while (!bfs.empty()) {
         Node q = bfs.front();
         bfs.pop();
         resp = q.rounds;
 
-        if (q.x == m - 1 && q.y == n - 1)
-        {
+        if (q.x == m - 1 && q.y == n - 1) {
             cout << resp;
             break;
         }
 
-        for (int i = 0; i < 4; i++)
-        {
+        for (int i = 0; i < 4; i++) {
             int x = q.x + dir[i][0];
             int y = q.y + dir[i][1];
 
             if (x >= m || y >= n || x < 0 || y < 0)
                 continue;
 
-            if (!visited[x][y] && ((q.h + q.rounds) % 10 + 1) >= (adj[x][y] + q.rounds) % 10)
-            {
+            if (!visited[x][y] && ((q.h + q.rounds) % 10 + 1) >= (adj[x][y] + q.rounds) % 10) {
                 bfs.push(Node(q.rounds + 1, x, y, adj[x][y]));
                 visited[x][y] = 1;
             }

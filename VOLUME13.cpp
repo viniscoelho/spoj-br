@@ -1,15 +1,15 @@
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
-#include <climits>
-#include <string>
-#include <cstring>
-#include <vector>
 #include <algorithm>
+#include <climits>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
 #include <list>
-#include <set>
-#include <queue>
 #include <map>
+#include <queue>
+#include <set>
+#include <string>
+#include <vector>
 #define mp make_pair
 #define pb push_back
 #define MAXV 200100
@@ -22,18 +22,17 @@ typedef long long int64;
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	int v, t, a;
-	cin >> v >> t;
-	while (t--)
-	{
-		cin >> a;
-		v += a;
-		if (v < 0)
-			v = 0;
-		if (v > 100)
-			v = 100;
-	}
-	cout << v << endl;
-	return 0;
+    ios::sync_with_stdio(false);
+    int v, t, a;
+    cin >> v >> t;
+    while (t--) {
+        cin >> a;
+        v += a;
+        if (v < 0)
+            v = 0;
+        if (v > 100)
+            v = 100;
+    }
+    cout << v << endl;
+    return 0;
 }
