@@ -20,19 +20,23 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef long long int64;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int64 m, a, b;
-	while ( cin >> m && m ){
+	while (cin >> m && m)
+	{
 		vector<int64> monkey;
-		for ( int k = 0; k < m; ++k ){
+		for (int k = 0; k < m; ++k)
+		{
 			cin >> a;
 			monkey.pb(a);
 		}
-		sort( monkey.begin(), monkey.end() );
-		int64 MAX = monkey[0]+monkey[m-1], i = 1, j = m-2;
-		while ( i < m/2 ){
-			MAX = max(MAX, monkey[i]+monkey[j]);
+		sort(monkey.begin(), monkey.end());
+		int64 MAX = monkey[0] + monkey[m - 1], i = 1, j = m - 2;
+		while (i < m / 2)
+		{
+			MAX = max(MAX, monkey[i] + monkey[j]);
 			i++, j--;
 		}
 		cout << MAX << "\n";

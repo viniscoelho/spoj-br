@@ -18,18 +18,23 @@ using namespace std;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int m;
 	cin >> m;
 	string a, b, c, d;
-	while ( m-- ){
+	while (m--)
+	{
 		cin >> a >> b;
 		c = a, d = b;
 		reverse(c.begin(), c.end());
-		while ( b.size() < 1000 ) b+= d;
-		if ( (b.find(a) != string::npos) || (b.find(c) != string::npos) ) cout << "S\n";
-		else cout << "N\n";
+		while (b.size() < 1000)
+			b += d;
+		if ((b.find(a) != string::npos) || (b.find(c) != string::npos))
+			cout << "S\n";
+		else
+			cout << "N\n";
 	}
 	return 0;
 }

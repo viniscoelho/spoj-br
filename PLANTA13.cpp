@@ -22,36 +22,39 @@ typedef long long int64;
 
 int tree[100100];
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int n, k;
 	char p;
 	cin >> n >> k;
-	
-	for ( int i = 0; i < k; i++ )
+
+	for (int i = 0; i < k; i++)
 		cin >> tree[i];
-	
-	sort(tree, tree+k);
-	
+
+	sort(tree, tree + k);
+
 	long long sum = 0, resp = 0;
 	int dead = 0, d = 0;
-	for ( int i = 1; i <= n; i++ )
+	for (int i = 1; i <= n; i++)
 	{
 		cin >> p;
-		if ( p == 'C' ) d++;
-		else d--;
-		
+		if (p == 'C')
+			d++;
+		else
+			d--;
+
 		sum += d;
-		
-		while ( tree[dead] <= -d && dead < k )
+
+		while (tree[dead] <= -d && dead < k)
 		{
-			resp += sum + i*tree[dead++];
+			resp += sum + i * tree[dead++];
 		}
 	}
-	
-	while ( dead < k )
+
+	while (dead < k)
 	{
-		resp += sum + n*tree[dead++];
+		resp += sum + n * tree[dead++];
 	}
 	cout << resp << endl;
 	return 0;

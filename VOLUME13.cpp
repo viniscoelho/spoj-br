@@ -20,16 +20,19 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef long long int64;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int v, t, a;
 	cin >> v >> t;
-	while ( t-- )
+	while (t--)
 	{
 		cin >> a;
 		v += a;
-		if ( v < 0 ) v = 0;
-		if ( v > 100 ) v = 100;
+		if (v < 0)
+			v = 0;
+		if (v > 100)
+			v = 100;
 	}
 	cout << v << endl;
 	return 0;

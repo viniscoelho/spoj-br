@@ -20,10 +20,11 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef long long int64;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int a, maior = -1;
-	while ( cin >> a && a )
+	while (cin >> a && a)
 	{
 		maior = max(maior, a);
 	}

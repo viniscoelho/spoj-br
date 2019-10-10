@@ -24,16 +24,22 @@ int myth[510][510];
 
 const int INF = 0x3f3f3f3f;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	cin >> n;
 	bool flag = false;
-	while ( n-- ){
+	while (n--)
+	{
 		cin >> a >> b;
-		if ( myth[a][b] == 0 ) myth[a][b]++;
-		else flag = true;
+		if (myth[a][b] == 0)
+			myth[a][b]++;
+		else
+			flag = true;
 	}
-	if ( flag ) cout << "1";
-	else cout << "0";
-    return 0;
+	if (flag)
+		cout << "1";
+	else
+		cout << "0";
+	return 0;
 }

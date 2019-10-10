@@ -8,34 +8,40 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     int v, n = 1;
-    for ( cin >> v; v != 0; cin >> v ){
+    for (cin >> v; v != 0; cin >> v)
+    {
         int i = 0, j = 0, k = 0, l = 0, div = 0, aux = 0;
-        div = v/50;
+        div = v / 50;
         aux = v;
-        if ( div >= 1 ){
-			i = div;
-			aux -= 50*i;
+        if (div >= 1)
+        {
+            i = div;
+            aux -= 50 * i;
         }
-        div = aux/10;
-        if ( div >= 1 ){
-			j = div;
-			aux -= 10*j;
+        div = aux / 10;
+        if (div >= 1)
+        {
+            j = div;
+            aux -= 10 * j;
         }
-        div = aux/5;
-        if ( div >= 1 ){
-			k = div;
-			aux -= 5*k;
+        div = aux / 5;
+        if (div >= 1)
+        {
+            k = div;
+            aux -= 5 * k;
         }
         div = aux;
-        if ( div >= 1 ){
-			l = div;
-			aux -= l;
+        if (div >= 1)
+        {
+            l = div;
+            aux -= l;
         }
         cout << "Teste " << n++ << "\n";
-        cout << i << " " << j << " " <<  k << " " << l << "\n\n";
+        cout << i << " " << j << " " << k << " " << l << "\n\n";
     }
     return 0;
 }

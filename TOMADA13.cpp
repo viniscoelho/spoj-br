@@ -20,14 +20,15 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef long long int64;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int a, soma = 0;
-	for ( int i = 0; i < 4; i++ )
+	for (int i = 0; i < 4; i++)
 	{
 		cin >> a;
 		soma += a;
 	}
-	cout << soma-3 << endl;
+	cout << soma - 3 << endl;
 	return 0;
 }

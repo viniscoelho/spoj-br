@@ -10,17 +10,20 @@
 
 using namespace std;
 
-int envelope[1010], MIN = 0x3f3f3f3f; 
+int envelope[1010], MIN = 0x3f3f3f3f;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     int n, m, x;
     cin >> n >> m;
-    for ( int i = 0; i < n; ++i ){
+    for (int i = 0; i < n; ++i)
+    {
         cin >> x;
-        envelope[x-1]++;
+        envelope[x - 1]++;
     }
-    for ( int i = 0; i < m; ++i ) MIN = min( MIN, envelope[i] );
+    for (int i = 0; i < m; ++i)
+        MIN = min(MIN, envelope[i]);
     cout << MIN;
-    return 0;   
+    return 0;
 }

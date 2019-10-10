@@ -28,54 +28,69 @@ vector<vi> graph;
 vi topo;
 int degree[MAXV], res[MAXV], weight[MAXV], memo[MAXV][MAXV], visited[MAXV][MAXV];
 
-void topoSort(){
+void topoSort()
+{
 	topo.clear();
 	queue<int> bfs;
-	for ( int i = 0; i < V; ++i ) if ( !degree[i] ) bfs.push(i);
-	while ( !bfs.empty() ) {
+	for (int i = 0; i < V; ++i)
+		if (!degree[i])
+			bfs.push(i);
+	while (!bfs.empty())
+	{
 		int v = bfs.front();
 		bfs.pop(), topo.pb(v);
 		vector<int>::iterator it;
-		for ( it = graph[v].begin(); it != graph[v].end(); it++ ){
+		for (it = graph[v].begin(); it != graph[v].end(); it++)
+		{
 			degree[*it]--;
-			if ( !degree[*it] ) bfs.push(*it);
+			if (!degree[*it])
+				bfs.push(*it);
 		}
 	}
 	reverse(topo.begin(), topo.end());
 }
 
-void solve( int v, int pos ){
-	if ( memo[v][pos] == ok ) return;
+void solve(int v, int pos)
+{
+	if (memo[v][pos] == ok)
+		return;
 	memo[v][pos] = ok;
-	for ( int i = pos; i < topo.size(); i++ ){
-		if ( visited[topo[i]][v] == ok ){
+	for (int i = pos; i < topo.size(); i++)
+	{
+		if (visited[topo[i]][v] == ok)
+		{
 			res[topo[i]] = max(res[topo[i]], res[v] + weight[topo[i]]);
-			solve(topo[i], i+1);
+			solve(topo[i], i + 1);
 			resp = max(resp, res[topo[i]]);
 		}
 	}
 }
 
-int main(){
+int main()
+{
 	int p, q, to;
-	while ( scanf("%d", &V) && V ){
+	while (scanf("%d", &V) && V)
+	{
 		graph.resize(V);
 		resp = -1;
-		for ( int i = 0; i < V; ++i ){
+		for (int i = 0; i < V; ++i)
+		{
 			scanf("%d %d", &weight[i], &p);
 			res[i] = weight[i];
 			degree[i] = p;
 			resp = max(resp, res[i]);
-			for ( int j = 0; j < p; ++j ){
+			for (int j = 0; j < p; ++j)
+			{
 				scanf("%d", &to);
-				visited[to-1][i] = ok;
-				graph[to-1].pb(i);
+				visited[to - 1][i] = ok;
+				graph[to - 1].pb(i);
 			}
 		}
 		topoSort();
-		for ( int i = 0; i < V; ++i ) solve(topo[i], i);
+		for (int i = 0; i < V; ++i)
+			solve(topo[i], i);
 		printf("%d\n", resp);
 		graph.clear(), ok++;
 	}
-    return 0;
+	return 0;
 }

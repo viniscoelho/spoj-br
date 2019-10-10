@@ -8,13 +8,16 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     int b, l, c, sum = 0;
     cin >> b;
-    for ( int i = 0; i < b; ++i ){
+    for (int i = 0; i < b; ++i)
+    {
         cin >> l >> c;
-        if ( l > c ) sum += c;
+        if (l > c)
+            sum += c;
     }
     cout << sum;
     return 0;

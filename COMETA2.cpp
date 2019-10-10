@@ -10,13 +10,15 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     int ano, sum = 0;
     cin >> ano;
-    int m = ano/76;
-    sum = m*76 + 10;
-    if ( sum <= ano ) sum += 76;
+    int m = ano / 76;
+    sum = m * 76 + 10;
+    if (sum <= ano)
+        sum += 76;
     cout << sum;
     return 0;
 }

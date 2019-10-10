@@ -20,10 +20,11 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef long long int64;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int a;
 	cin >> a;
-	cout << a*4 << endl;
+	cout << a * 4 << endl;
 	return 0;
 }

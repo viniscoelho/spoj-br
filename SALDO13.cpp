@@ -20,12 +20,13 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef long long int64;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int n, s, x, min_saldo;
 	cin >> n >> s;
 	min_saldo = s;
-	while ( n-- )
+	while (n--)
 	{
 		cin >> x;
 		s += x;

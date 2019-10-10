@@ -24,29 +24,36 @@ int m, n, s = 0;
 int graph[110][110], visited = 1;
 int visitado[110];
 
-void runDFS( int u ){
+void runDFS(int u)
+{
 	int i;
-	for ( i = 0; i < m; i++ )
-		if ( graph[u][i] == visited && visitado[i] != visited ){
+	for (i = 0; i < m; i++)
+		if (graph[u][i] == visited && visitado[i] != visited)
+		{
 			visitado[i] = visited, s++;
-            runDFS(i);
+			runDFS(i);
 		}
 }
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int de, para, t = 1;
-	while ( cin >> m >> n && m + n ){
+	while (cin >> m >> n && m + n)
+	{
 		cout << "Teste " << t++ << "\n";
-		for ( int i = 0; i < n; ++i ){
+		for (int i = 0; i < n; ++i)
+		{
 			cin >> de >> para;
-			graph[de-1][para-1] = visited;
-			graph[para-1][de-1] = visited;
+			graph[de - 1][para - 1] = visited;
+			graph[para - 1][de - 1] = visited;
 		}
 		s = 0;
 		runDFS(0);
-		if ( s == m ) cout << "normal\n\n";
-		else cout << "falha\n\n";
+		if (s == m)
+			cout << "normal\n\n";
+		else
+			cout << "falha\n\n";
 		visited++;
 	}
 	return 0;

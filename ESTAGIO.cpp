@@ -11,28 +11,31 @@
 
 using namespace std;
 
-struct aluno{
-	int codigo, media;
+struct aluno
+{
+    int codigo, media;
 };
 
 aluno alunos[MAX_ALUNOS];
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     int n, turma = 1;
-    for ( cin >> n; n != 0; cin >> n ){
+    for (cin >> n; n != 0; cin >> n)
+    {
         int aux = 0;
         vector<int> melhor;
-        for ( int i = 0; i < n; i++ )
+        for (int i = 0; i < n; i++)
             cin >> alunos[i].codigo >> alunos[i].media;
-        for ( int i = 0; i < n; i++ )
-            if ( alunos[i].media >= aux )
-				aux = alunos[i].media;
-        for ( int i = 0; i < n; i++ )
-            if ( alunos[i].media == aux )
-				melhor.pb(alunos[i].codigo);
+        for (int i = 0; i < n; i++)
+            if (alunos[i].media >= aux)
+                aux = alunos[i].media;
+        for (int i = 0; i < n; i++)
+            if (alunos[i].media == aux)
+                melhor.pb(alunos[i].codigo);
         cout << "Turma " << turma++ << "\n";
-        for ( int i = 0; i < melhor.size(); i++ )
+        for (int i = 0; i < melhor.size(); i++)
             cout << melhor[i] << " ";
         cout << "\n\n";
     }

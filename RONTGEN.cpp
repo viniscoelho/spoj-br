@@ -16,28 +16,35 @@ using namespace std;
 typedef unsigned long long int64;
 typedef pair<int, int> ii;
 
-string convertInt( int number ){
+string convertInt(int number)
+{
 	stringstream ss;
 	ss << number;
 	return ss.str();
 }
 
-int main(){
-    ios::sync_with_stdio(false);
+int main()
+{
+	ios::sync_with_stdio(false);
 	int t;
 	cin >> t;
-    while ( t-- ){
+	while (t--)
+	{
 		string seq;
 		int q = 0;
 		cin >> seq >> q;
 		cout << seq << "\n";
-		for ( int i = 0; i < q; ++i ){
+		for (int i = 0; i < q; ++i)
+		{
 			string ans;
 			char s = seq[0];
 			int qtd = 0;
-			for ( int j = 0; j < seq.size(); ++j ){
-				if ( s == seq[j] ) qtd++;
-				else{
+			for (int j = 0; j < seq.size(); ++j)
+			{
+				if (s == seq[j])
+					qtd++;
+				else
+				{
 					ans += convertInt(qtd);
 					ans += s;
 					s = seq[j], qtd = 1;
@@ -49,6 +56,6 @@ int main(){
 			seq = ans;
 		}
 		cout << "\n";
-    }
-    return 0;
+	}
+	return 0;
 }

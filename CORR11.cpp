@@ -13,24 +13,28 @@ using namespace std;
 
 typedef pair<int, int> ii;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     int m, n, x;
     cin >> n >> m;
     priority_queue<ii> corrida;
-    for ( int i = 0; i < n; ++i ){
+    for (int i = 0; i < n; ++i)
+    {
         int soma = 0;
-        for ( int j = 0; j < m; ++j ){
+        for (int j = 0; j < m; ++j)
+        {
             cin >> x;
             soma += x;
         }
-        corrida.push( ii( -soma, i+1 ) );
+        corrida.push(ii(-soma, i + 1));
     }
     int cont = 0;
-    while ( cont < 3 ){
-		cout << corrida.top().second << "\n";
-		corrida.pop();
-		cont++;
+    while (cont < 3)
+    {
+        cout << corrida.top().second << "\n";
+        corrida.pop();
+        cont++;
     }
     return 0;
 }

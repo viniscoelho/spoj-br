@@ -29,23 +29,29 @@ const int INF = 0x3f3f3f3f;
 
 int64 a, b, n;
 
-int main(){
+int main()
+{
 	scanf("%d", &n);
 	int sub = INF, ant = INF, diff, cont = 0;
-	for ( int i = 0; i < n; ++i ){
+	for (int i = 0; i < n; ++i)
+	{
 		scanf("%d", &a);
-		if ( ant == INF ) ant = a;
-		else{
-			diff = ant-a;
+		if (ant == INF)
 			ant = a;
-			if ( sub == INF ) sub = diff;
-			else if ( sub != diff ){
-					cont++;
-					sub = INF;
+		else
+		{
+			diff = ant - a;
+			ant = a;
+			if (sub == INF)
+				sub = diff;
+			else if (sub != diff)
+			{
+				cont++;
+				sub = INF;
 			}
 		}
-    }
-	printf("%d", cont+1);
-       
-    return 0;
+	}
+	printf("%d", cont + 1);
+
+	return 0;
 }

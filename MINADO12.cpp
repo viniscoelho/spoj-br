@@ -31,18 +31,23 @@ int resp[60];
 
 int a, b, i, n;
 
-int main(){
+int main()
+{
 	scanf("%d", &n);
-	for ( i = 0; i < n; ++i ){
+	for (i = 0; i < n; ++i)
+	{
 		scanf("%d", &a);
-		if ( a == 1 ){
+		if (a == 1)
+		{
 			resp[i]++;
-			if ( i-1 >= 0 ) resp[i-1]++;
-			if ( i+1 < n ) resp[i+1]++;
+			if (i - 1 >= 0)
+				resp[i - 1]++;
+			if (i + 1 < n)
+				resp[i + 1]++;
 		}
-    }
-	for ( i = 0; i < n; ++i )
+	}
+	for (i = 0; i < n; ++i)
 		printf("%d\n", resp[i]);
-       
-    return 0;
+
+	return 0;
 }

@@ -25,29 +25,36 @@ typedef pair<int, int> ii;
 typedef pair<string, string> ss;
 typedef pair<int, ss> iss;
 
-int main(){
+int main()
+{
 	ios::sync_with_stdio(false);
 	int n, p;
-	while ( cin >> n && n ){
+	while (cin >> n && n)
+	{
 		unordered_map<int, int> hist;
 		pair<unordered_map<int, int>::iterator, bool> ret;
 		int ans = 0, t = 0;
 		list<int> ps;
 		list<int>::iterator li;
-		for ( int i = 0; i < n; ++i ){
+		for (int i = 0; i < n; ++i)
+		{
 			cin >> p;
-			if ( !ans ){
+			if (!ans)
+			{
 				ans += p;
-				ret = hist.insert( mp(p, p) );
+				ret = hist.insert(mp(p, p));
 				ps.push_front(p);
 				t++;
 			}
-			else{
-				ret = hist.insert( mp(p, p) );
-				if ( !ret.second ){
+			else
+			{
+				ret = hist.insert(mp(p, p));
+				if (!ret.second)
+				{
 					int c = 1;
 					li = ps.begin();
-					while ( *li != p ){
+					while (*li != p)
+					{
 						c++;
 						li++;
 					}
@@ -55,9 +62,10 @@ int main(){
 					ans += c;
 					t++;
 				}
-				else{
+				else
+				{
 					ps.push_front(p);
-					ans += p+t;
+					ans += p + t;
 					t++;
 				}
 			}
