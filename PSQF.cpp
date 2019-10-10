@@ -1,13 +1,6 @@
-#include <iostream>
-#include <string>
-#include <map>
-#include <queue>
-#include <sstream>
-#include <set>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 
 using namespace std;
-using namespace tr1;
 
 typedef pair<string, unordered_map<string, bool>> smap;
 

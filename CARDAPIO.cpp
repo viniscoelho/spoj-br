@@ -7,21 +7,13 @@
 		caso contrario e possivel.
 */
 
-#include <iostream>
-#include <algorithm>
-#include <queue>
-#include <vector>
-#include <list>
-#include <set>
-#include <string>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define MAX 4000
 #define mp make_pair
 #define pb push_back
 #define INF 0x3f3f3f3f
 
 using namespace std;
-using namespace tr1;
 
 typedef pair<short, short> ii;
 typedef pair<short, bool> ib;

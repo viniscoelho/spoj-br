@@ -5,18 +5,11 @@
 		que traduza uma dada frase. As chaves sao strings simples
 */
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <cstdlib>
-#include <tr1/unordered_map>
-#include <sstream>
-#include <algorithm>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 
 using namespace std;
-using namespace tr1;
 
 int main()
 {

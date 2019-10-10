@@ -1,22 +1,10 @@
-#include <iostream>
-#include <cstdio>
-#include <algorithm>
-#include <string>
-#include <set>
-#include <tr1/unordered_map>
-#include <map>
-#include <vector>
-#include <list>
-#include <queue>
-#include <cstring>
-#include <set>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 #define MAXV 110
 #define color 0
 
 using namespace std;
-using namespace tr1;
 
 typedef pair<int, int> ii;
 typedef pair<int, ii> iii;

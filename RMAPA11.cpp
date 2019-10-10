@@ -1,14 +1,9 @@
-#include <iostream>
-#include <queue>
-#include <vector>
-#include <tr1/unordered_map>
-#include <algorithm>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 #define MAXV 550
 
 using namespace std;
-using namespace tr1;
 
 int v, e;
 int de, para, peso;

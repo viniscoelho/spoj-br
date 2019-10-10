@@ -1,11 +1,8 @@
-#include <iostream>
-#include <queue>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 
 using namespace std;
-using namespace tr1;
 
 int v, e;
 int de, para, peso;

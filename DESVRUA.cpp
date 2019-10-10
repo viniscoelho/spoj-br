@@ -1,20 +1,9 @@
-#include <iostream>
-#include <cmath>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <list>
-#include <set>
-#include <queue>
-#include <map>
-#include <tr1/unordered_map>
-#include <cstdio>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 #define MAXV 1010
 
 using namespace std;
-using namespace tr1;
 
 typedef pair<int, int> ii;
 typedef vector<int> vi;
